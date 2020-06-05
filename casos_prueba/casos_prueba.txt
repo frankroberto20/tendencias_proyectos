@@ -1,0 +1,71 @@
+Function / Input                                    Success                                         Output
+
+*Range Constructor
+Data type: int 
+3, 5, 7, 9                                          true                                         
+-3, -2, -1, 0                                       true    
+-987654321987654321                                 false        
+1234567890102030405060, 7, 9                        false
+Data type: String
+(4, 8]                                              true
+[7, 100)                                            true
+hola                                                false
+[h k}                                               false                       
+
+*contains -> (4, 8]
+Data type: int
+5, 7, 8, 9                                          true                                            false
+6, 7, 8                                             true                                            true
+5, 12345678901234567890, 8, 9                       false
+-9876543210987654321, 0                             false
+
+*containsRange -> (4, 8]
+Data type: String
+[5, 8]                                              true                                            true
+(3, 8)                                              true                                            false
+jkldfns + 1                                         false
+hola mundo                                          false
+
+*getAllPoints
+Data type: int
+range {6, 8, 9, 11}                                 true                                            {6, 8, 9, 11}
+range {5, 6, 9}                                     true                                            {5, 6, 9}
+range {-1234567891020304050607080}                  false                                   
+range {8, 9, -987655432198765434319876564321}       false
+Data type: String
+range [5, 7]                                        true                                            {5, 6, 7}
+range (3, 10)                                       true                                            {4, 5, 6, 7, 8, 9}
+range [program]                                      false
+range hola                                          false
+
+*getEndPoints
+Data type: int
+range {6, 8, 9, 11}                                 true                                            {6, 11}
+range {5, 6, 9}                                     true                                            {5, 9}
+range {-1234567891020304050607080}                  false                                   
+range {8, 9, -987655432198765434319876564321}       false
+Data type: String
+range [5, 7]                                        true                                            {5, 7}
+range (3, 10)                                       true                                            {4, 9}
+range [program]                                     false                                           
+range hola                                          false                                   
+
+*overlapsRange -> (4, 8]
+Data type: String
+[2, 10]                                             true                                            true
+(1, 4)                                              true                                            false
+holamundo                                           false
+[h, string]                                         false
+
+*equals -> (4, 8]                               
+Data type: int
+{5, 6, 7, 8}                                        true                                            true
+{4, 8, 10}                                          true                                            false
+{12345678901234567890, 1, 3}                        false
+{-12345678901234567890, 1.5}                        false
+Data type: String
+[3, 8]                                              true                                            false
+(-3, 7)                                             true                                            false
+estoesunaprueba                                     false
+9999                                                false
+
